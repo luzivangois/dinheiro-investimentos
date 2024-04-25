@@ -1,0 +1,19 @@
+<main>
+    <section class="form-section">
+        <h1>Dinheiro</h1>
+        <h1>&</h1>
+        <h1>Investimentos</h1>
+        <br>
+
+        <h2>Seja Bem-Vindo!</h2>
+        <ng-content></ng-content>
+
+        <div class="login-container">
+            <h2>Login</h2>
+            <input [(ngModel)]="username" placeholder="Usuário">
+            <input [(ngModel)]="password" type="password" placeholder="Senha">
+            <button (click)="login()">Entrar</button>
+            <button class="bt-register" (click)="register()">Cadastrar</button>
+        </div>
+    </section>
+</main>
