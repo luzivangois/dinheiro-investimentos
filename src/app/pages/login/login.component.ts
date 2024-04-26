@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
@@ -15,6 +15,7 @@ import { ToastrService } from 'ngx-toastr';
 export class LoginComponent {
  username: string = '';
  password: string = '';
+ @Input() disablePrimaryBtn: boolean = true;
 
  constructor(
   private router: Router,

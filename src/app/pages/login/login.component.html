@@ -1,19 +1,31 @@
 <main>
     <section class="form-section">
-        <h1>Dinheiro</h1>
-        <h1>&</h1>
+        <h1>Dinheiro &</h1>
         <h1>Investimentos</h1>
         <br>
 
         <h2>Seja Bem-Vindo!</h2>
-        <ng-content></ng-content>
-
         <div class="login-container">
-            <h2>Login</h2>
-            <input [(ngModel)]="username" placeholder="Usuário">
-            <input [(ngModel)]="password" type="password" placeholder="Senha">
-            <button (click)="login()">Entrar</button>
-            <button class="bt-register" (click)="register()">Cadastrar</button>
+            <h2>Acesse sua conta ou</h2>
+            <h2>cadastre-se:</h2>
+            <div class="input-content">
+                <label for="username">Usuário</label>
+                <input id="username" [(ngModel)]="username" placeholder="Usuário">                
+                <label for="password">Senha</label>
+                <input id="password" [(ngModel)]="password" type="password" placeholder="Senha">
+            </div>            
+            <button
+                class="bt-login"
+                (submit)="login()"
+                [disabled]="disablePrimaryBtn"
+                >Entrar
+            </button>
+            <div class="divider">
+                <div></div>
+                <span>ou</span>
+                <div></div>
+            </div>
+            <button class="bt-register" (click)="register()">Cadastrar-se</button>
         </div>
     </section>
 </main>

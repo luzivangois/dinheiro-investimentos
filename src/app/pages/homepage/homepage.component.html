@@ -1,0 +1,48 @@
+<main>        
+    <section class="form-section">
+        <h1>Dinheiro &</h1>
+        <h1>Investimentos</h1>
+        <br>       
+        
+       <h2>Seja Bem-Vindo!</h2>
+       <br>
+       <ng-content></ng-content>
+
+       <div class="centered-buttons">
+            <button 
+                class="bt-label" 
+                (click)="navigateToUserId()"
+            >
+                Consultar Usuário
+            </button>            
+            <button 
+                class="bt-label" 
+                (click)="checkBalanced()"
+            >
+                Consultar Saldo
+            </button>            
+            <button 
+                class="bt-label" 
+                (click)="makeDeposit()"
+            >
+                Depositar
+            </button>            
+            <button 
+                class="bt-label" 
+                (click)="makeWithdrawal()"
+            >
+                Sacar
+            </button>            
+            <button
+              class="bt-label"
+              (click)="navigateToFileUpload()">
+              Upload de Documentos
+            </button>              
+            <button
+                class="logout"
+                (click)="logout()">
+                SAIR
+              </button>
+       </div>
+    </section>    
+  </main>
