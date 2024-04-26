@@ -1,37 +1,55 @@
-import { Component, Input } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, FormRecord, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 import { ToastrService } from 'ngx-toastr';
+import { LoginLayoutComponent } from '../../components/login-layout/login-layout.component';
+import { LoginInputComponent } from '../../components/login-input/login-input.component';
+
+interface LoginForm {
+  login: FormControl,
+  senha: FormControl
+}
 
 @Component({
- selector: 'app-login',
- standalone: true,
- imports: [HttpClientModule, FormsModule],
- templateUrl: './login.component.html',
- styleUrls: ['./login.component.scss']
+  selector: 'app-login',
+  standalone: true,
+  imports: [
+    LoginLayoutComponent,
+    ReactiveFormsModule,
+    LoginInputComponent
+  ],
+  providers: [
+    AuthService
+  ],
+  templateUrl: './login.component.html',
+  styleUrl: './login.component.scss'
 })
 export class LoginComponent {
- username: string = '';
- password: string = '';
- @Input() disablePrimaryBtn: boolean = true;
+  loginForm!: FormGroup<LoginForm>;
 
- constructor(
-  private router: Router,
-  private authService: AuthService,
-  private toastService: ToastrService
-) { }
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+    private toastService: ToastrService
+  ){
+    this.loginForm = new FormGroup({
+      login: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      senha: new FormControl('', [Validators.required, Validators.minLength(3)])
+    })
+  }
 
- login() {
-    this.authService.login(this.username, this.password).subscribe({
+  submit(){
+    this.authService.login(this.loginForm.value.login, this.loginForm.value.senha).subscribe({
       next: () => {
         this.toastService.success("Login feito com sucesso!");
         this.router.navigate(["homepage"]);
-      },error: () => this.toastService.error("O Login Falhou! Verifique os dados informados e tente novamente.")
-    });
- }
- register() {
-  this.router.navigate(["register"])
-}
+    },
+      error: () => this.toastService.error("O Login Falhou! Verifique os dados informados e tente novamente.")
+    })
+  }
+
+  navigate(){
+    this.router.navigate(["register"])
+  }
 }

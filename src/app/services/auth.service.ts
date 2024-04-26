@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
  providedIn: 'root'
 })
 export class AuthService {
- private loginUrl = 'http://localhost:5000/api/login'; // Substitua pela URL do seu backend
+ private loginUrl = 'http://localhost:5127/api/authentication/login';
 
  constructor(private http: HttpClient) { }
 
- login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(this.loginUrl, { username, password });
+ login(Login: string, Password: string): Observable<any> {
+    return this.http.post<any>(this.loginUrl, { Login, Password });
  }
 }

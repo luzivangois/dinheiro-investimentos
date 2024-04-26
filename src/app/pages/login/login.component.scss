@@ -1,120 +1,16 @@
-main {
+@import "../../../styles/default-login.scss";
+
+form {
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 97vh;
-    width: 99vw;
-    background-image: url('/assets/background.jpg');
-    background-color: rgba(168, 235, 179, 0.8);
-    background-blend-mode: overlay;
-    background-size: cover;
-    background-position: center;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 34px;
 
-    section {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 20px;
-    }  
-
-    .form-section {
-        padding: 50px;
-        background-color: white;
-        width: 80%;
-        max-width: 400px;
-        margin: 0 auto;
-
-        h1 {
-            font-size: 50px;
-            font-weight: bold;
-            margin-bottom: 0px;
-            color: #05ab47;
-        }
-
-        h2 {
-            font-size: 30px;
-            font-weight: bold;
-            color: #fc9641;
-        }
-
-        .login-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            gap: 30px;
-
-            color: black;
-            font-size: 16px;
-            text-align: start;
-
-            label {
-                margin-bottom: 10px;
-            }
-
-            .input-content {
-                width: 100%;
-                border-radius: 8px;
-                display: flex;
-            }
-            
-            input {
-                border: none;
-                border-radius: 8px 0 0 8px;
-                background-color: white;
-                padding: 12px 0 12px 20px;
-                width: 100%;
-            }
-
-            .divider {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
-                width: 100%;
-
-                font-size: 14px;
-                color: #05ab47;
-                font-weight: 400;
-                text-transform: uppercase;
-
-                div {
-                    flex-grow: 1;
-                    height: 2px;
-                    background-color: #05ab47;
-                }
-            }
-
-            button {
-                width: 100%;
-                border-radius: 8px;
-                font-size: 16px;
-                font-weight: 500;
-                border: none;
-                background: transparent;
-                padding: 12px 24px;
-                cursor: pointer;
-                
-                &:disabled {
-                    opacity: 0.8;
-                }                
-    
-                &.bt-login {
-                    background-color:  #fc9641;
-                    color: white;
-                    box-shadow:0px 8px 12px rgba(148.23004603385925, 64.33935597538948, 255, 0.20000000298023224);
-                }
-
-                &.bt-register {
-                    border: 1px solid  #57bcc6;
-                    color: white;
-                    background-color: #05ab47;
-              }
-            }
-        }
+    span {
+        font-size: 14px;
+        text-decoration: underline;
+        color: $secondary-color;
+        text-align: end;
     }
 }
