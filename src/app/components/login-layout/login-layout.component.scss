@@ -13,28 +13,16 @@ main {
     background-size: cover;
     background-position: center;
 
-    section {
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-        // justify-content: center;
-        // height: 100%;
-        // width: 20px;
-
+    section {        
+        align-items: center;
+        justify-content: center;
         margin: 0;
         padding: 0;
         font-family: Arial, Helvetica, sans-serif;
         box-sizing: border-box;
-        //text-shadow: #e0eb0d 2px 2px;
     }  
 
     .form-section {
-        // padding: 50px;
-        // background-color: $gray-bg;
-        // width: 80%;
-        // max-width: 400px;
-        // margin: 0 auto;
-
         width: 450px;
         background-color: rgba(255, 255, 255, 0.15);
         backdrop-filter: blur(10px);
@@ -48,12 +36,14 @@ main {
             margin-bottom: 0px;
             text-shadow: #FFF 2px 2px;
             color: $primary-color;
+            text-align: center;
         }
 
         h2 {
             font-size: 30px;
             font-weight: bold;
             color: $secondary-color;
+            text-align: center;           
         }
 
         .btn-wrapper {
