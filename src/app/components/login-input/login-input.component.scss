@@ -2,34 +2,20 @@
 
 .input-wrapper {
     color: $text-color;
-    font-size: 16px;
-    text-align: start;
+    position: relative;
+    width: 100%;
+    height: 50%;
+    margin: 10px auto;          
 
-    label {
-        margin-bottom: 10px;
-    }
-
-    .input-content {
+    input { 
         width: 100%;
-        border-radius: 8px;
-        display: flex;
-        
-        .icon {
-            padding: 12px;
-            background-color: $primary-color;
-            border-radius: 0 8px 8px 0;
-
-            img {
-                height: 20px;
-            }
-        }
-
-        input {
-            border: none;
-            border-radius: 8px 0 0 8px;
-            background-color: $gray-secondary-bg;
-            padding: 12px 0 12px 20px;
-            width: 100%;
-        }
+        height: 100%;
+        background-color: transparent;
+        outline: none;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        border-radius: 8px 0 0 8px;
+        font-size: 16px;
+        padding: 12px 0 12px 10px;
     }
+
 }
