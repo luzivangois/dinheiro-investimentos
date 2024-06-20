@@ -1,0 +1,43 @@
+<app-login-layout
+    primaryBtnText="Cadastrar"
+    secondaryBtnText="Acessar"
+    (submit)="submit()"
+    (navigate)="navigate()"
+    [disablePrimaryBtn]="!registerForm.valid"
+>
+    <form [formGroup]="registerForm">
+        <app-login-input
+            formControlName="name"
+            inputName="name"
+            type="text"
+            label="Seu nome"
+            placeholder="Seu nome"
+        >            
+        </app-login-input>
+        <app-login-input
+            formControlName="login"
+            inputName="login"
+            type="text"
+            label="Login"
+            placeholder="Seu login"
+        >            
+        </app-login-input>
+        <app-login-input
+            formControlName="password"
+            inputName="password"
+            type="password"
+            label="Sua senha"
+            placeholder="Senha"
+        >
+        </app-login-input>
+        <app-login-input
+            formControlName="role"
+            inputName="role"
+            type="text"
+            label="Perfil:"
+            placeholder="Perfil"
+        >            
+        </app-login-input>
+    <span class="forget">Esqueceu a senha?</span>
+    </form>
+</app-login-layout>
