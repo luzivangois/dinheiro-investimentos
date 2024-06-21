@@ -3,6 +3,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { UsersPanelComponent } from './pages/users-panel/users-panel.component';
+import { AccountsPanelComponent } from './pages/accounts-panel/accounts-panel.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,9 @@ export const routes: Routes = [
     {
         path: 'users-panel',
         component: UsersPanelComponent
+    },
+    {
+        path: 'accounts-panel',
+        component: AccountsPanelComponent
     }
 ];

@@ -18,7 +18,7 @@ export class HomepageComponent {
   }
 
   navigateToAccountsPanel() {
-    this.router.navigate(['users-panel']);
+    this.router.navigate(['accounts-panel']);
   }
 
   logout() {    

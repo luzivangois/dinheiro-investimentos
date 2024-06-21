@@ -1,0 +1,61 @@
+<main>        
+    <section class="form-section">
+        <h1>Dinheiro &</h1>
+        <h1>Investimentos</h1>
+        <br>       
+        
+       <h2>Gestão de Contas</h2>
+       <br>
+       <ng-content></ng-content>
+
+       <div class="centered-buttons">
+            <button 
+                class="account" 
+                (click)="deposit()"
+            >
+                Depositar
+            </button>            
+            <button 
+                class="account" 
+                (click)="withdraw()"
+            >
+                Sacar
+            </button>
+            <button 
+                class="account" 
+                (click)="balance()"
+            >
+                Saldo da Conta
+            </button> 
+            <button 
+                class="account" 
+                (click)="invest_crypto()"
+            >
+                Investir em Cryptomoeda
+            </button>
+            <button 
+                class="account" 
+                (click)="invest_stocks()"
+            >
+                Investir em Ações
+            </button>
+            <button 
+                class="account" 
+                (click)="total_investments()"
+            >
+                Saldo de Investimentos
+            </button>
+            <button 
+                class="account" 
+                (click)="investment_statement()"
+            >
+                Extrato de Investimentos
+            </button>                                     
+            <button
+                class="logout"
+                (click)="backToHomePage()">
+                Voltar
+              </button>
+       </div>
+    </section>    
+  </main>
