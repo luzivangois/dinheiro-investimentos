@@ -1,0 +1,43 @@
+<main>        
+    <section class="form-section">
+        <h1>Dinheiro &</h1>
+        <h1>Investimentos</h1>
+        <br>       
+        
+       <h2>Seja Bem-Vindo!</h2>
+       <br>
+       <ng-content></ng-content>
+
+       <div class="centered-buttons">
+            <button 
+                class="data-user" 
+                (click)="submitAllUsers()"
+            >
+                Consultar Todos os Usuários
+            </button>            
+            <button 
+                class="data-user" 
+                (click)="navigateToUserId()"
+            >
+                Consultar Usuário por ID
+            </button>
+            <button 
+                class="data-user" 
+                (click)="navigateToUpdateUser()"
+            >
+                Atualizar Usuário
+            </button> 
+            <button 
+                class="data-user" 
+                (click)="navigateToDeleteUser()"
+            >
+                Deletar Usuário por ID
+            </button>                                     
+            <button
+                class="logout"
+                (click)="backToHomePage()">
+                Voltar
+              </button>
+       </div>
+    </section>    
+  </main>

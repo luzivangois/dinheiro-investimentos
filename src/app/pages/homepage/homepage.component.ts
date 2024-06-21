@@ -13,26 +13,14 @@ import { Router } from '@angular/router';
 export class HomepageComponent {
   constructor(private router: Router) {}
 
-  navigateToUserId() {
-    this.router.navigate(['usuario-consulta']);
+  navigateToUsersPanel() {
+    this.router.navigate(['users-panel']);
   }
 
-  checkBalanced() {
-    this.router.navigate(['usuario-consulta']);
+  navigateToAccountsPanel() {
+    this.router.navigate(['users-panel']);
   }
 
-  makeDeposit() {
-    this.router.navigate(['usuario-consulta']);
-  }
-
-  makeWithdrawal() {
-    this.router.navigate(['usuario-consulta']);
-  }  
-  
-  navigateToFileUpload() {
-    this.router.navigate(['fileupload']);
-  }
-  
   logout() {    
     this.router.navigate(['login']);
   }
