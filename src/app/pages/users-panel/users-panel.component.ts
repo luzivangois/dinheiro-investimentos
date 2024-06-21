@@ -3,7 +3,7 @@ import { AllUsersService } from '../../services/all-users.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
-import { MoldalAllUsersComponent } from '../../modals/modal-allusers/modal-allusers.component';
+import { ModalAllUsersComponent } from '../../modals/modal-allusers/modal-allusers.component';
 
 
 @Component({
@@ -22,11 +22,11 @@ export class UsersPanelComponent {
     public dialog: MatDialog
   ) {}
 
-  submitAllUsers() {
+  AllUsers() {
     this.allUserService.getAllUsers().subscribe({
       next: (data) => {
         this.toastService.success("Buscando Todos Usuários");
-        this.dialog.open(MoldalAllUsersComponent, {
+        this.dialog.open(ModalAllUsersComponent, {
           width: '520px',
           height: '700px',
           data: {users: data}
@@ -36,19 +36,19 @@ export class UsersPanelComponent {
     })
   }
   
-  navigateToUserId() {
+  UserId() {
     this.router.navigate(['user-by-id']);
   }
 
-  navigateToUpdateUser() {
+  UpdateUser() {
     this.router.navigate(['user-by-id']);
   }
 
-  navigateToDeleteUser() {
+  DeleteUser() {
     this.router.navigate(['user-delete-id']);
   }
   
-  backToHomePage() {    
+  HomePage() {    
     this.router.navigate(['homepage']);
   }  
 

@@ -3,17 +3,17 @@ import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/materia
 import { CommonModule } from '@angular/common';
 
 @Component({
- selector: 'app-moldal-allusers',
+ selector: 'app-modal-allusers',
  standalone: true,
  imports: [MatDialogModule, CommonModule],
  templateUrl: './modal-allusers.component.html',
  styleUrls: ['./modal-allusers.component.scss']
 })
-export class MoldalAllUsersComponent {
+export class ModalAllUsersComponent {
   usuario: any;
 
  constructor(
-    public dialogRef: MatDialogRef<MoldalAllUsersComponent>,
+    public dialogRef: MatDialogRef<ModalAllUsersComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
 
  onNoClick(): void {

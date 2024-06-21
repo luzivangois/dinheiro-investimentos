@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ModalAllUsersComponent } from './modal-allusers.component';
+import { ModalUserComponent } from './modal-user.component';
 
-describe('ModalAllusersComponent', () => {
-  let component: ModalAllUsersComponent;
-  let fixture: ComponentFixture<ModalAllUsersComponent>;
+describe('ModalUserComponent', () => {
+  let component: ModalUserComponent;
+  let fixture: ComponentFixture<ModalUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ModalAllUsersComponent]
+      imports: [ModalUserComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ModalAllUsersComponent);
+    fixture = TestBed.createComponent(ModalUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
