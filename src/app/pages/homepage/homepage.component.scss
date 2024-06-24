@@ -6,7 +6,7 @@ main {
     height: 97vh;
     width: 99vw;
     background-image: url('/assets/svg/background.jpg');
-    background-color: rgba(168, 235, 179, 0.8);
+    background-color: rgba(234, 240, 235, 0.93);
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
@@ -16,16 +16,19 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        height: 100%;
-        width: 20px;
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
     }    
 
     .form-section {
-        padding: 50px;
-        background-color: white;
-        width: 80%;
-        max-width: 400px;
-        margin: 0 auto;
+        width: 450px;
+        background-color: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(10px);
+        border: 2px sold rgba(255, 255, 255, 0.2);
+        padding: 40px;
+        border-radius: 10px;
 
         h1 {
             font-size: 50px;

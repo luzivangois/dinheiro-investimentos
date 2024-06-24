@@ -8,7 +8,7 @@ import { LoginInputComponent } from '../../components/login-input/login-input.co
 
 interface LoginForm {
   login: FormControl,
-  senha: FormControl
+  password: FormControl
 }
 
 @Component({
@@ -35,12 +35,12 @@ export class LoginComponent {
   ){
     this.loginForm = new FormGroup({
       login: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      senha: new FormControl('', [Validators.required, Validators.minLength(3)])
+      password: new FormControl('', [Validators.required, Validators.minLength(3)])
     })
   }
 
   submit(){
-    this.authService.login(this.loginForm.value.login, this.loginForm.value.senha).subscribe({
+    this.authService.login(this.loginForm.value.login, this.loginForm.value.password).subscribe({
       next: () => {
         this.toastService.success("Login feito com sucesso!");
         this.router.navigate(["homepage"]);

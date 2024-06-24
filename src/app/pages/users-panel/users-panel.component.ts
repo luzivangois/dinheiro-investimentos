@@ -17,13 +17,13 @@ import { ModalAllUsersComponent } from '../../modals/modal-allusers/modal-alluse
 export class UsersPanelComponent {
   constructor(
     private router: Router,
-    private allUserService: AllUsersService,
+    private allUsersService: AllUsersService,
     private toastService: ToastrService,
     public dialog: MatDialog
   ) {}
 
-  AllUsers() {
-    this.allUserService.getAllUsers().subscribe({
+  submitAllUsers() {
+    this.allUsersService.getAllUsers().subscribe({
       next: (data) => {
         this.toastService.success("Buscando Todos Usuários");
         this.dialog.open(ModalAllUsersComponent, {
