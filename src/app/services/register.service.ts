@@ -7,16 +7,11 @@ import { tap } from 'rxjs';
   providedIn: 'root'
 })
 export class RegisterService {
-  apiUrl: string = "http://localhost:8080/auth/"
+  apiUrl: string = "http://localhost:5000/user/register"
 
   constructor(private httpClient: HttpClient) { }
 
   register(name: string, login: string, password: string, role: string){
-    return this.httpClient.post<LoginResponse>(this.apiUrl + "register", { name, login, password, role }).pipe(
-      tap((value) => {
-        sessionStorage.setItem("auth-token", value.token)
-        sessionStorage.setItem("username", value.login)
-      })
-    )
+    return this.httpClient.post<any>(this.apiUrl, { name, login, password, role })
   }
 }
