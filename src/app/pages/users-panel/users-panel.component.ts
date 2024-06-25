@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalAllUsersComponent } from '../../modals/modal-allusers/modal-allusers.component';
+import { ModalUserComponent } from '../../modals/modal-user/modal-user.component';
 
 
 @Component({
@@ -37,7 +38,10 @@ export class UsersPanelComponent {
   }
   
   UserId() {
-    this.router.navigate(['user-by-id']);
+    this.dialog.open(ModalUserComponent, {
+      width: '520px',
+      height: '650px'
+    })
   }
 
   UpdateUser() {

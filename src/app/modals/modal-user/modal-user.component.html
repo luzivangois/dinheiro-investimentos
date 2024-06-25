@@ -1,29 +1,56 @@
 <main>
     <h2 mat-dialog-title>Dados do Usuário</h2>
     <mat-dialog-content class="dados">
-        <p>
-            <span class="label">ID: </span>
-            <span class="value.id">{{ data.usuario.id }}</span>
-        </p>
-        <p>
-            <span class="label">Perfil: </span>
-            <span class="value">{{ data.usuario.role }}</span>
-        </p>
-        <p>
-            <span class="label">Nome: </span>
-            <span class="value">{{ data.usuario.name }}</span>
-        </p>
-        <p>
-            <span class="label">Login: </span>
-            <span class="value">{{ data.usuario.login }}</span>
-        </p>
-        <p>
-            <span class="label">Senha: </span>
-            <span class="value">{{ data.usuario.password }}</span>
-        </p>
+        <div>
+            <label for="idInput">Digite o ID:</label>
+            <input id="idInput" [(ngModel)]="searchId" type="text" required>
+          </div>
+          <div *ngIf="dados">
+            <h3>Dados do Usuário:</h3>
+            <p>
+              <span class="label">ID: </span>
+              <span class="value.id">{{ dados.id }}</span>
+            </p>
+            <p>
+              <span class="label">Perfil: </span>
+              <span class="value">{{ dados.role }}</span>
+            </p>
+            <p>
+              <span class="label">Nome: </span>
+              <span class="value">{{ dados.name }}</span>
+            </p>
+            <p>
+              <span class="label">Login: </span>
+              <span class="value">{{ dados.login }}</span>
+            </p>
+            <p>
+              <span class="label">Senha: </span>
+              <span class="value.id">{{ dados.password }}</span>
+            </p>        
+          </div>
+          <div *ngIf="dados.account">
+            <h3>Dados da Conta do Usuário:</h3>
+            <p>
+              <span class="label">ContaID: </span>
+              <span class="value.id">{{ dados.account.id }}</span>
+            </p>
+            <p>
+              <span class="label">Saldo da Conta: </span>
+              <span class="value">{{ dados.account.balance }}</span>
+            </p>
+            <p>
+              <span class="label">Saldo Investido em Cripto: </span>
+              <span class="value">{{ dados.account.crypto }}</span>
+            </p>
+            <p>
+              <span class="label">Saldo Investido em Ações: </span>
+              <span class="value">{{ dados.account.stocks }}</span>
+            </p>                   
+          </div>
     </mat-dialog-content>
     
-    <mat-dialog-actions>
-        <button class="button" mat-button (click)="onNoClick()">Fechar</button>
+    <mat-dialog-actions align="end">
+        <button mat-button (click)="onSearch()">Pesquisar</button>
+        <button mat-button (click)="onBack()">Voltar</button>
     </mat-dialog-actions>
 </main>
