@@ -5,9 +5,9 @@ import { Observable } from 'rxjs';
 @Injectable({
  providedIn: 'root'
 })
-export class AllUsersService {
+export class UsersService {
 
- private apiUrl = 'http://localhost:5000/user/allusers';
+ private apiUrl = 'http://localhost:5000/user';
 
  constructor(private http: HttpClient) { }
 
@@ -17,6 +17,13 @@ getToken(): string {
 
 getAllUsers(): Observable<any> {
    const headers = new HttpHeaders().set('Authorization', this.getToken());
-   return this.http.get(`${this.apiUrl}`, { headers });
+   return this.http.get(`${this.apiUrl}/allusers`, { headers });
 }
+
+getUserById(id: string): Observable<any> {
+   const headers = new HttpHeaders().set('Authorization', this.getToken());
+   return this.http.get(`${this.apiUrl}/data/${id}`, { headers });
+ }
+
+
 }

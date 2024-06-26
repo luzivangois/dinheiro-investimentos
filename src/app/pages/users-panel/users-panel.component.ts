@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AllUsersService } from '../../services/all-users.service';
+import { UsersService } from '../../services/users.service';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,20 +11,20 @@ import { ModalUserComponent } from '../../modals/modal-user/modal-user.component
   selector: 'app-users-panel',
   standalone: true,
   imports: [],
-  providers: [AllUsersService],
+  providers: [UsersService],
   templateUrl: './users-panel.component.html',
   styleUrl: './users-panel.component.scss'
 })
 export class UsersPanelComponent {
   constructor(
     private router: Router,
-    private allUsersService: AllUsersService,
+    private usersService: UsersService,
     private toastService: ToastrService,
     public dialog: MatDialog
   ) {}
 
   submitAllUsers() {
-    this.allUsersService.getAllUsers().subscribe({
+    this.usersService.getAllUsers().subscribe({
       next: (data) => {
         this.toastService.success("Buscando Todos Usuários");
         this.dialog.open(ModalAllUsersComponent, {
